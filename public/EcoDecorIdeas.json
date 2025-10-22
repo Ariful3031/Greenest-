@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Green Corners",
+        "description": "Transform dull corners into cozy green spaces using tall indoor plants like Snake Plant or Areca Palm.",
+        "image": "https://i.pinimg.com/236x/17/e6/dc/17e6dc10c8dd8ed01aa5c05495bfa422.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Hanging Beauties",
+        "description": "Use hanging planters near windows or balconies to create an eye-catching natural curtain.",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "id": 3,
+        "title": "Tabletop Magic",
+        "description": "Place small succulents or bonsai plants on tables and shelves for a minimal yet fresh vibe.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZQ2UcTAe0LnewKL5CGfdYdf_pTT5lbaIXfQ&s"
+    },
+    {
+        "id": 4,
+        "title": "Wall Planters",
+        "description": "Decorate empty walls with mounted planters — perfect for small apartments and offices.",
+        "image": "https://adorit.ca/cdn/shop/products/living-wall-planter-living-wall-planters-by-woollypocket-4_grande.jpg?v=1656528958"
+    }
+]

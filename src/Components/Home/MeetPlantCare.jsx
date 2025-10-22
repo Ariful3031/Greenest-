@@ -11,8 +11,8 @@ const MeetPlantCare = () => {
     }, []);
 
     return (
-        <div>
-            <h2 className="text-3xl font-bold text-green-800 my-5">
+        <div className='my-10'>
+            <h2 className="text-3xl text-center font-bold text-green-700 my-8">
                 Meet Our Green Experts
             </h2>
 

@@ -3,6 +3,8 @@ import HeroSection from '../Components/Home/HeroSection';
 import TopRed from '../Components/Home/TopRed';
 import PlantCareTips from '../Components/Home/PlantCareTips';
 import MeetPlantCare from '../Components/Home/MeetPlantCare';
+import EcoDecorIdeas from '../Components/Home/EcoDecorIdeas';
+
 
 const HomePage = () => {
 
@@ -12,7 +14,9 @@ const HomePage = () => {
             <TopRed></TopRed>
             <PlantCareTips ></PlantCareTips>
             <MeetPlantCare></MeetPlantCare>
+            <EcoDecorIdeas></EcoDecorIdeas>
             <h1>This is homepage</h1>
+
 
         </div>
     );

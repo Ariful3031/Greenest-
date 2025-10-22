@@ -2,13 +2,16 @@ import React from 'react';
 import { FcRating } from 'react-icons/fc';
 import { IoLogoUsd } from 'react-icons/io';
 import { MdOutlineStar } from 'react-icons/md';
+import { Link } from 'react-router';
 
 const TopCard = ({ singleData }) => {
     console.log(singleData)
-    const { image, plantName, price, rating } = singleData;
+    const { image, plantName, price, rating, plantId } = singleData;
+    console.log(plantId)
+
     return (
         <div className='p-5 bg-[#F0FDF4] rounded-lg'>
-            <img className='w-full h-[300px] rounded-lg' src={image} alt="" />
+            <img className='w-full h-[300px] rounded-lg object-cover' src={image} alt="" />
             <h2 className='text-xl font-semibold mt-5 mb-2'>{plantName}</h2>
             <div className='flex justify-between'>
                 <div className='flex items-center px-3 py-1 bg-amber-200 rounded-xl'>
@@ -26,7 +29,7 @@ const TopCard = ({ singleData }) => {
                     <p>{rating}</p>
                 </div>
             </div>
-            <button className='btn bg-[#23BE0A] text-white w-full py-2 mt-3 rounded-lg'>View Details</button>
+            <Link to={`/view/details/${plantId}`} className='btn bg-[#23BE0A] text-white w-full py-2 mt-3 rounded-lg'>View Details</Link>
 
         </div>
     );
