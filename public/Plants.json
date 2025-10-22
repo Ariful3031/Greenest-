@@ -1,0 +1,110 @@
+[
+    {
+        "plantId": 1,
+        "plantName": "Snake Plant",
+        "category": "Air Purifier",
+        "price": 18,
+        "rating": 4.8,
+        "availableStock": 10,
+        "careLevel": "Easy",
+        "description": "A hardy plant that purifies indoor air and thrives in low light.",
+        "image": "https://www.gardenersdream.co.uk/cdn/shop/articles/Snake_Plant_1_f6204179-d92b-40e3-bec7-0d3a61e93b81.jpg?v=1744013002",
+        "providerName": "UrbanGreen Studio"
+    },
+    {
+        "plantId": 2,
+        "plantName": "Peace Lily",
+        "category": "Indoor Plant",
+        "price": 22,
+        "rating": 4.7,
+        "availableStock": 8,
+        "careLevel": "Medium",
+        "description": "An elegant indoor plant known for its white flowers and air-purifying properties.",
+        "image": "https://prickleplants.co.uk/cdn/shop/products/b95a32ed-5207-4a85-ad06-2f06b67cd046.jpg?v=1661164123",
+        "providerName": "Leaf & Light"
+    },
+    {
+        "plantId": 3,
+        "plantName": "Aloe Vera",
+        "category": "Medicinal",
+        "price": 15,
+        "rating": 4.6,
+        "availableStock": 12,
+        "careLevel": "Easy",
+        "description": "A succulent plant valued for its soothing gel and easy maintenance.",
+        "image": "https://m.media-amazon.com/images/I/71vDeWZkH8L._AC_UF350,350_QL80_.jpg",
+        "providerName": "Green Corner BD"
+    },
+    {
+        "plantId": 4,
+        "plantName": "Fiddle Leaf Fig",
+        "category": "Decorative",
+        "price": 30,
+        "rating": 4.9,
+        "availableStock": 6,
+        "careLevel": "Hard",
+        "description": "A trendy indoor plant with large glossy leaves perfect for modern homes.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScv9d014xu6yWlNPESKnPUj785UgG5IkxvHw&s",
+        "providerName": "UrbanGreen Studio"
+    },
+    {
+        "plantId": 5,
+        "plantName": "Spider Plant",
+        "category": "Air Purifier",
+        "price": 14,
+        "rating": 4.5,
+        "availableStock": 15,
+        "careLevel": "Easy",
+        "description": "A fast-growing plant that helps remove toxins from the air and looks great in hanging pots.",
+        "image": "https://www.thetutuguru.com.au/wp-content/uploads/2024/04/Chlorophytum-comosum-Spider-Plant-potted.jpg",
+        "providerName": "Nature Nest"
+    },
+    {
+        "plantId": 6,
+        "plantName": "Money Plant",
+        "category": "Lucky Plant",
+        "price": 16,
+        "rating": 4.7,
+        "availableStock": 9,
+        "careLevel": "Easy",
+        "description": "Believed to bring luck and prosperity, this vine thrives in both soil and water.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLvOb9nbjjn_6duDpzshP84OTZnz9FWuofbg&s",
+        "providerName": "GreenGlow Nursery"
+    },
+    {
+        "plantId": 7,
+        "plantName": "Rubber Plant",
+        "category": "Indoor Plant",
+        "price": 25,
+        "rating": 4.6,
+        "availableStock": 7,
+        "careLevel": "Medium",
+        "description": "A beautiful plant with thick, glossy leaves that adds elegance to any room.",
+        "image": "https://www.thesill.com/cdn/shop/files/the-sill_ficus_elastica_upcycled-planter_small_cream_1.jpg?v=1753648341&width=1946",
+        "providerName": "Leaf & Light"
+    },
+    {
+        "plantId": 8,
+        "plantName": "Areca Palm",
+        "category": "Air Purifier",
+        "price": 28,
+        "rating": 4.8,
+        "availableStock": 11,
+        "careLevel": "Medium",
+        "description": "A lush palm that improves air quality and brings a tropical vibe indoors.",
+        "image": "https://cdn.shopify.com/s/files/1/0553/5711/2435/files/Areca-Palm-plant_480x480.jpg?v=1722232962",
+        "providerName": "Nature Nest"
+    },
+    {
+        "plantId": 9,
+        "plantName": "Boston Fern",
+        "category": "Hanging Plant",
+        "price": 20,
+        "rating": 4.4,
+        "availableStock": 13,
+        "careLevel": "Medium",
+        "description": "A graceful fern ideal for hanging baskets that adds freshness to interiors.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi-ynAUFEdFDIMpDdPsIj7uPJ1tuooiCgbnw&s",
+        "providerName": "Green Corner BD"
+    }
+]

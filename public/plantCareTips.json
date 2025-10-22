@@ -1,0 +1,65 @@
+[
+    {
+        "plantId": 1,
+        "plantName": "Snake Plant",
+        "watering": "Water every 2–3 weeks. Allow soil to dry completely between watering.",
+        "sunlight": "Low to bright indirect light. Tolerates low light areas.",
+        "fertilizing": "Feed with a balanced houseplant fertilizer once every 2 months during spring and summer."
+    },
+    {
+        "plantId": 2,
+        "plantName": "Peace Lily",
+        "watering": "Keep soil consistently moist but not soggy. Mist leaves occasionally.",
+        "sunlight": "Bright, indirect sunlight. Avoid direct sun to prevent leaf burn.",
+        "fertilizing": "Apply a balanced liquid fertilizer every 6 weeks during growing season."
+    },
+    {
+        "plantId": 3,
+        "plantName": "Aloe Vera",
+        "watering": "Water deeply once every 3 weeks. Let soil dry completely between waterings.",
+        "sunlight": "Bright, indirect sunlight or partial sunlight near a window.",
+        "fertilizing": "Feed lightly with succulent fertilizer once in spring and once in summer."
+    },
+    {
+        "plantId": 4,
+        "plantName": "Fiddle Leaf Fig",
+        "watering": "Water weekly, keeping soil slightly moist but not soggy.",
+        "sunlight": "Bright, filtered light. Avoid harsh direct sunlight.",
+        "fertilizing": "Use a high-nitrogen fertilizer once a month during growing season."
+    },
+    {
+        "plantId": 5,
+        "plantName": "Spider Plant",
+        "watering": "Water every 1–2 weeks. Allow topsoil to dry between waterings.",
+        "sunlight": "Bright, indirect light is ideal. Avoid strong afternoon sun.",
+        "fertilizing": "Use a mild liquid fertilizer once a month during spring and summer."
+    },
+    {
+        "plantId": 6,
+        "plantName": "Money Plant",
+        "watering": "Water once a week. Keep soil slightly moist but never waterlogged.",
+        "sunlight": "Medium to bright indirect sunlight. Avoid direct rays.",
+        "fertilizing": "Fertilize once every 2 months with a general-purpose fertilizer."
+    },
+    {
+        "plantId": 7,
+        "plantName": "Rubber Plant",
+        "watering": "Water once a week during summer, less in winter.",
+        "sunlight": "Bright, indirect sunlight. Can tolerate some direct morning light.",
+        "fertilizing": "Feed monthly during spring and summer with nitrogen-rich fertilizer."
+    },
+    {
+        "plantId": 8,
+        "plantName": "Areca Palm",
+        "watering": "Water regularly to keep soil moist but not soggy.",
+        "sunlight": "Bright, indirect sunlight or filtered light through a curtain.",
+        "fertilizing": "Apply palm fertilizer every 2 months during the growing season."
+    },
+    {
+        "plantId": 9,
+        "plantName": "Boston Fern",
+        "watering": "Keep soil consistently moist. Mist regularly to maintain humidity.",
+        "sunlight": "Indirect sunlight or partial shade. Avoid harsh sunlight.",
+        "fertilizing": "Feed with a diluted liquid fertilizer every 4–6 weeks in spring and summer."
+    }
+]
