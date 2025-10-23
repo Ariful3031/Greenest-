@@ -61,10 +61,10 @@ const PlantsDetailsPage = () => {
                                 <fieldset className="fieldset">
                                     {/* Name */}
                                     <label className="label text-black font-semibold">Name</label>
-                                    <input type="text" name='name' required className="input outline-none focus:ring-2 focus:ring-[#02A53B] focus:border-none " placeholder="Name" />
+                                    <input type="text" name='name' required className="input outline-none focus:ring-2 focus:ring-[#02A53B] focus:border-none " placeholder="Type Name" />
                                     {/* Email */}
                                     <label className="label text-black font-semibold">Email</label>
-                                    <input type="email" name='email' required className="input outline-none focus:ring-2 focus:ring-[#02A53B] focus:border-none " placeholder="Email" />
+                                    <input type="email" name='email' required className="input outline-none focus:ring-2 focus:ring-[#02A53B] focus:border-none " placeholder="Type Email" />
 
                                     <button className="btn btn-neutral font-semibold border-none bg-[#02A53B] hover:bg-[#15803D] mt-4">Book Now</button>
                                 </fieldset>

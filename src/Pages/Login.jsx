@@ -9,8 +9,8 @@ const Login = () => {
         console.log('click login', email, password)
     }
     return (
-        <div>
-            <div className="card bg-base-100 w-full mx-auto  mt-20 max-w-md shrink-0 shadow-2xl">
+        <div className='bg-[#F0FDF4] w-full mx-auto h-screen my-auto flex justify-center items-center'>
+            <div className="card bg-base-100 w-full mx-auto  max-w-md shrink-0 shadow-2xl">
                 <h1 className='text-2xl text-[#15803D] font-semibold text-center mt-5'>Login Now</h1>
                 <div className="card-body">
                     <form onSubmit={handleLogin}>
@@ -18,11 +18,11 @@ const Login = () => {
 
                             {/* Email */}
                             <label className="label text-black font-semibold">Email</label>
-                            <input type="email" name='email' required className="input outline-none focus:ring-2 focus:ring-[#02A53B] focus:border-none " placeholder="Email" />
+                            <input type="email" name='email' required className="input w-full text-[#D9D9D9] outline-none focus:ring-2 focus:ring-[#02A53B] focus:border-none " placeholder="Email" />
 
                             {/* password */}
                             <label className="label text-black font-semibold">Password</label>
-                            <input type="password" name='password' required className="input outline-none focus:ring-2 focus:ring-[#02A53B] focus:border-none " placeholder="password" />
+                            <input type="password" name='password' required className="input text-[#D9D9D9] w-full outline-none focus:ring-2 focus:ring-[#02A53B] focus:border-none " placeholder="password" />
                             {/* forgot password */}
                             <div className='mt-3'><a className="link link-hover">Forgot password?</a></div>
                             {/* button  */}

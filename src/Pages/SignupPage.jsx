@@ -1,17 +1,153 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
+import { AuthContext } from '../Context/AuthContext/AuthContext';
+import { FaEye } from 'react-icons/fa';
+import { IoMdEyeOff } from 'react-icons/io';
+import { toast } from 'react-toastify';
 
 const SignupPage = () => {
 
+    const [showPassword, setShowPassword] = useState(false)
+    const { createUser, setUser, updateUser } = useContext(AuthContext);
+    // console.log(createUser)
+    const passwordLengthExpression = /^.{6,}$/
+    const passwordNumberExpression = /(?=.*\d)/
+    const passwordUpperCaseExpression = /(?=.*[A-Z])/
+    const passwordLowerCaseExpression = /(?=.*[a-z])/
+    const passwordSpecialCharacterExpression = /(?=.*[@$!%*?&])/
+
     const handleSignup = (event) => {
+
         event.preventDefault();
-        const name = event.target.name.value
-        const image = event.target.image.value
-        const email = event.target.email.value
-        const password = event.target.password.value
-        console.log('click to the ', name, image, email, password)
+        const name = event.target.name.value;
+        const image = event.target.image.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+
+
+
+        if (!passwordLengthExpression.test(password)) {
+            toast.error('password must be least 6')
+            return
+        }
+        else if (!passwordNumberExpression.test(password)) {
+            toast.error('password must be one number(0-9)')
+            return
+        }
+        else if (!passwordUpperCaseExpression.test(password)) {
+            toast.error('password must be one uppercase letter')
+            return
+        }
+        else if (!passwordLowerCaseExpression.test(password)) {
+            toast.error('password must be one lowercase letter')
+            return
+        }
+        else if (!passwordSpecialCharacterExpression.test(password)) {
+            toast.error('password must be one special character(@ $ ! % * ? &)')
+            return
+        }
+        event.target.reset();
+
+
+
+
+        // const passwordRegularExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+
+        // console.log('get email and password', { email, password });
+
+        // if (!passwordRegularExp.test(password)) {
+        //     toast.error("password must be least 6,one uppercase letter, one lowercase letter, one number, and one special character")
+        //     return
+
+        // }
+
+        createUser(email, password)
+            .then(result => {
+                setUser(result.user);
+                toast.success('Registration success');
+                updateUser({ displayName: name, photoURL: image })
+                    .then(() => {
+                        // UpdateProfile
+                    })
+                    .catch(err => {
+                        console.log(err.message)
+                    })
+                // console.log(result.user)
+            })
+            .catch(error => {
+                // console.log(error.message)
+
+                if (error.code === "auth/email-already-in-use") {
+                    toast.error("This email is already registered.");
+                } else if (error.code === "auth/invalid-email") {
+                    toast.error("Please enter a valid email address.");
+                } else if (error.code === "auth/operation-not-allowed") {
+                    toast.error("This sign-in method is not enabled.");
+                } else if (error.code === "auth/weak-password") {
+                    toast.error("Password should be at least 6 characters long.");
+                } else if (error.code === "auth/user-disabled") {
+                    toast.error("This user account has been disabled.");
+                } else if (error.code === "auth/user-not-found") {
+                    toast.error("No user found with this email.");
+                } else if (error.code === "auth/wrong-password") {
+                    toast.error("Incorrect password. Please try again.");
+                } else if (error.code === "auth/missing-password") {
+                    toast.error("Please enter your password.");
+                } else if (error.code === "auth/invalid-credential") {
+                    toast.error("Invalid credentials provided.");
+                } else if (error.code === "auth/account-exists-with-different-credential") {
+                    toast.error("An account already exists with a different sign-in method.");
+                } else if (error.code === "auth/credential-already-in-use") {
+                    toast.error("This credential is already linked with another account.");
+                } else if (error.code === "auth/popup-blocked") {
+                    toast.error("Popup was blocked by the browser. Allow popups and try again.");
+                } else if (error.code === "auth/popup-closed-by-user") {
+                    toast.error("You closed the popup before completing the sign-in.");
+                } else if (error.code === "auth/cancelled-popup-request") {
+                    toast.error("Only one popup request is allowed at a time.");
+                } else if (error.code === "auth/network-request-failed") {
+                    toast.error("Network error. Please check your internet connection.");
+                } else if (error.code === "auth/too-many-requests") {
+                    toast.error("Too many attempts. Please try again later.");
+                } else if (error.code === "auth/internal-error") {
+                    toast.error("Internal error occurred. Please try again.");
+                } else if (error.code === "auth/unauthorized-domain") {
+                    toast.error("This domain is not authorized for OAuth operations.");
+                } else if (error.code === "auth/invalid-verification-code") {
+                    toast.error("The verification code is invalid.");
+                } else if (error.code === "auth/invalid-verification-id") {
+                    toast.error("Invalid verification ID.");
+                } else if (error.code === "auth/missing-verification-code") {
+                    toast.error("Verification code is missing.");
+                } else if (error.code === "auth/missing-verification-id") {
+                    toast.error("Verification ID is missing.");
+                } else if (error.code === "auth/requires-recent-login") {
+                    toast.error("Please reauthenticate and try again.");
+                } else if (error.code === "auth/invalid-user-token") {
+                    toast.error("Your session has expired. Please log in again.");
+                } else if (error.code === "auth/expired-action-code") {
+                    toast.error("This action code has expired.");
+                } else if (error.code === "auth/invalid-action-code") {
+                    toast.error("This action code is invalid.");
+                } else if (error.code === "auth/missing-email") {
+                    toast.error("Please enter your email address.");
+                } else if (error.code === "auth/quota-exceeded") {
+                    toast.error("Server quota exceeded. Please try again later.");
+                } else if (error.code === "auth/app-not-authorized") {
+                    toast.error("This app is not authorized to use Firebase Authentication.");
+                } else if (error.code === "auth/timeout") {
+                    toast.error("Request timed out. Please try again.");
+                } else if (error.code === "auth/web-storage-unsupported") {
+                    toast.error("Your browser does not support web storage.");
+                } else if (error.code === "auth/missing-client-identifier") {
+                    toast.error("Missing client identifier for OAuth.");
+                } else {
+                    toast.error(error.message || "An unexpected authentication error occurred.");
+                }
+            })
+        // console.log('click to the ', name, image, email, password)
     }
     return (
-        <div className=''>
+        <div className='bg-[#F0FDF4] w-full mx-auto h-screen my-auto flex justify-center items-center'>
             <div className=" card bg-base-100 w-full mx-auto  mt-20 max-w-md shrink-0 shadow-2xl">
                 <h1 className='text-2xl text-[#15803D] font-semibold text-center mt-5'>Register Now</h1>
                 <div className="card-body">
@@ -19,18 +155,22 @@ const SignupPage = () => {
                         <fieldset className="fieldset">
                             {/* Name */}
                             <label className="label text-black font-semibold">Name</label>
-                            <input type="text" name='name' required className="input outline-none focus:ring-2 focus:ring-[#02A53B] focus:border-none " placeholder="Name" />
+                            <input type="text" name='name' required className="input text-[#D9D9D9] w-full outline-none focus:ring-2 focus:ring-[#02A53B] focus:border-none " placeholder="Name" />
                             {/* image url */}
 
                             <label className="label text-black font-semibold">URL</label>
-                            <input type="url" name='image' required className="input outline-none focus:ring-2 focus:ring-[#02A53B] focus:border-none " placeholder="Image Url" />
+                            <input type="url" name='image' required className="input w-full text-[#D9D9D9]  outline-none focus:ring-2 focus:ring-[#02A53B] focus:border-none " placeholder="Image Url" />
                             {/* Email */}
                             <label className="label text-black font-semibold">Email</label>
-                            <input type="email" name='email' required className="input outline-none focus:ring-2 focus:ring-[#02A53B] focus:border-none " placeholder="Email" />
+                            <input type="email" name='email' required className="input w-full text-[#D9D9D9] outline-none focus:ring-2 focus:ring-[#02A53B] focus:border-none " placeholder="Email" />
 
                             {/* password */}
                             <label className="label text-black font-semibold">Password</label>
-                            <input type="password" name='password' required className="input outline-none focus:ring-2 focus:ring-[#02A53B] focus:border-none " placeholder="password" />
+                            <div className='relative'>
+                                <input type={showPassword ? "text" : "password"} name='password' required className="input w-full text-[#747474] outline-none focus:ring-2 focus:ring-[#02A53B] focus:border-none " placeholder="password" />
+                                <button type='button' onClick={() => setShowPassword(!showPassword)} className="text-xl absolute right-2 top-2 z-50">{
+                                    showPassword ? <IoMdEyeOff /> : <FaEye />}</button>
+                            </div>
                             {/* button  */}
                             <button className="btn btn-neutral font-semibold border-none bg-[#02A53B] hover:bg-[#15803D] mt-4">Register</button>
                         </fieldset>
