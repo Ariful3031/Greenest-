@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true)
     console.log(user)
 
     const createUser = (email, password) => {
@@ -35,6 +36,8 @@ const AuthProvider = ({ children }) => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             console.log(currentUser)
             setUser(currentUser)
+            setLoading(false)
+
         })
         return () => {
             unSubscribe();
@@ -46,7 +49,9 @@ const AuthProvider = ({ children }) => {
         user,
         updateUser,
         loginUser,
-        logoutUser
+        logoutUser,
+        loading,
+        setLoading
     }
 
 

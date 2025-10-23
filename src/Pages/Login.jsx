@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../Context/AuthContext/AuthContext';
 import { IoMdEyeOff } from 'react-icons/io';
 import { FaEye } from 'react-icons/fa';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
 import { useRef } from 'react';
 import { sendPasswordResetEmail } from 'firebase/auth';
@@ -11,6 +11,8 @@ import { auth } from '../Firebase/Firebase.config';
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false)
     const { loginUser } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const emailRef = useRef();
 
@@ -25,6 +27,7 @@ const Login = () => {
                 console.log(result.user)
                 toast.success("login success")
                 event.target.reset();
+                navigate(`${location.state ? location.state : "/"}`)
 
             })
             .catch(error => {

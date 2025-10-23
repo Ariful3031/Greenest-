@@ -4,6 +4,7 @@ import HomePage from "../../Pages/HomePage";
 import PlantsDetailLayout from "../../Layout/PlantsDetailLayout";
 import Login from "../../Pages/Login";
 import SignupPage from "../../Pages/SignupPage";
+import PrivateRoute from "../../Context/PrivateRoute/PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -38,7 +39,10 @@ const router = createBrowserRouter([
     },
     {
         path: '/view/details/:plantId',
-        Component: PlantsDetailLayout,
+        element:
+            <PrivateRoute>
+                <PlantsDetailLayout></PlantsDetailLayout>
+            </PrivateRoute>,
         loader: () => fetch('/Plants.json'),
     }
 
