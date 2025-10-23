@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { AuthContext } from '../AuthContext/AuthContext';
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import { auth } from '../../Firebase/Firebase.config';
 import { toast } from 'react-toastify';
+// import { useLocation, useNavigate } from 'react-router';
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true)
-    console.log(user)
+    // console.log(user)
+
+    const googleProvider = new GoogleAuthProvider();
+
+    const googleSignin = () => {
+
+        return signInWithPopup(auth, googleProvider)
+    }
 
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
@@ -21,10 +29,13 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
 
+
+
     const logoutUser = () => {
         signOut(auth)
             .then(() => {
                 toast.success('signOut Success')
+
             }).catch((err) => {
                 toast.error(err.message)
             });
@@ -51,7 +62,8 @@ const AuthProvider = ({ children }) => {
         loginUser,
         logoutUser,
         loading,
-        setLoading
+        setLoading,
+        googleSignin
     }
 
 

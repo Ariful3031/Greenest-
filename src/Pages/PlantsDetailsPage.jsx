@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { IoLogoUsd } from 'react-icons/io';
 import { MdOutlineStar } from 'react-icons/md';
 import { useLoaderData, useParams } from 'react-router';
+import { toast } from 'react-toastify';
 
 const PlantsDetailsPage = () => {
     const [details, setDetails] = useState({});
@@ -17,6 +18,7 @@ const PlantsDetailsPage = () => {
         const userName = event.target.name.value
         const userEmail = event.target.email.value
         console.log('click book now', userName, userEmail)
+        toast.success('Success Booking')
         event.target.reset();
 
     }
