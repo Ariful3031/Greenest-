@@ -5,6 +5,7 @@ import PlantsDetailLayout from "../../Layout/PlantsDetailLayout";
 import Login from "../../Pages/Login";
 import SignupPage from "../../Pages/SignupPage";
 import PrivateRoute from "../../Context/PrivateRoute/PrivateRoute";
+import ProfilePage from "../../Pages/ProfilePage";
 
 
 const router = createBrowserRouter([
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/profile',
-                element: <h1> This is  My Profile</h1>
+                element: <ProfilePage></ProfilePage>
             },
             {
                 path: '/login',

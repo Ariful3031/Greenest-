@@ -15,7 +15,6 @@ const HomePage = () => {
             <PlantCareTips ></PlantCareTips>
             <MeetPlantCare></MeetPlantCare>
             <EcoDecorIdeas></EcoDecorIdeas>
-            <h1>This is homepage</h1>
 
 
         </div>
