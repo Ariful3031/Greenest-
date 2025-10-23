@@ -3,9 +3,11 @@ import { AuthContext } from '../Context/AuthContext/AuthContext';
 import { FaEye } from 'react-icons/fa';
 import { IoMdEyeOff } from 'react-icons/io';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router';
 
 const SignupPage = () => {
 
+    const [err, setErr] = useState("")
     const [showPassword, setShowPassword] = useState(false)
     const { createUser, setUser, updateUser } = useContext(AuthContext);
     // console.log(createUser)
@@ -26,39 +28,27 @@ const SignupPage = () => {
 
 
         if (!passwordLengthExpression.test(password)) {
-            toast.error('password must be least 6')
+            setErr('password must be least 6')
             return
         }
         else if (!passwordNumberExpression.test(password)) {
-            toast.error('password must be one number(0-9)')
+            setErr('password must be one number(0-9)')
             return
         }
         else if (!passwordUpperCaseExpression.test(password)) {
-            toast.error('password must be one uppercase letter')
+            setErr('password must be one uppercase letter')
             return
         }
         else if (!passwordLowerCaseExpression.test(password)) {
-            toast.error('password must be one lowercase letter')
+            setErr('password must be one lowercase letter')
             return
         }
         else if (!passwordSpecialCharacterExpression.test(password)) {
-            toast.error('password must be one special character(@ $ ! % * ? &)')
+            setErr('password must be one special character(@ $ ! % * ? &)')
             return
         }
         event.target.reset();
 
-
-
-
-        // const passwordRegularExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
-
-        // console.log('get email and password', { email, password });
-
-        // if (!passwordRegularExp.test(password)) {
-        //     toast.error("password must be least 6,one uppercase letter, one lowercase letter, one number, and one special character")
-        //     return
-
-        // }
 
         createUser(email, password)
             .then(result => {
@@ -149,7 +139,7 @@ const SignupPage = () => {
     return (
         <div className='bg-[#F0FDF4] w-full mx-auto h-screen my-auto flex justify-center items-center'>
             <div className=" card bg-base-100 w-full mx-auto  mt-20 max-w-md shrink-0 shadow-2xl">
-                <h1 className='text-2xl text-[#15803D] font-semibold text-center mt-5'>Register Now</h1>
+                <h1 className='text-2xl text-[#15803D] font-semibold text-center mt-5'>Signup Now</h1>
                 <div className="card-body">
                     <form onSubmit={handleSignup}>
                         <fieldset className="fieldset">
@@ -171,10 +161,15 @@ const SignupPage = () => {
                                 <button type='button' onClick={() => setShowPassword(!showPassword)} className="text-xl absolute right-2 top-2 z-50">{
                                     showPassword ? <IoMdEyeOff /> : <FaEye />}</button>
                             </div>
+
+                            {
+                                err && <p className='text-red-500 text-sm mt-2'>{err}</p>
+                            }
                             {/* button  */}
-                            <button className="btn btn-neutral font-semibold border-none bg-[#02A53B] hover:bg-[#15803D] mt-4">Register</button>
+                            <button className="btn btn-neutral font-semibold border-none bg-[#02A53B] hover:bg-[#15803D] mt-4">Sign Up</button>
                         </fieldset>
                     </form>
+                    <p className='mt-2'> Already Have An Account ? please  <Link className='cursor-pointer hover:underline text-red-500' to='/login'>Login</Link> </p>
                 </div>
             </div>
         </div>

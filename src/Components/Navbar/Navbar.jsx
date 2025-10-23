@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router';
+import { AuthContext } from '../../Context/AuthContext/AuthContext';
 
 const Navbar = () => {
+
+    const { user, logoutUser } = useContext(AuthContext);
     const Links = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/plants'>Plants</NavLink></li>
         <li><NavLink to='/profile'>My profile</NavLink></li>
         <li><NavLink to='/login'>Login</NavLink></li>
         <li><NavLink to='/signup'>Signup</NavLink></li>
+
 
     </>
     return (
@@ -33,8 +37,15 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end flex gap-2">
-                <Link to='/profile'><img className='w-10 h-10 rounded-full' src="https://i.ibb.co/Rpgw3yYk/mustafizur.jpg" alt="" /></Link>
-                <a className="btn bg-[#166534] text-white px-8 rounded-lg">Login</a>
+                <Link to='/profile'><img className='w-10 h-10 rounded-full' src={`${user ? user.image : "https://i.abcnewsfe.com/a/10669fab-5a56-4555-8012-0b3d83369352/avatar-the-way-of-water-07-ht-jt-220907_1662579296232_hpMain_1x1.jpg?w=992"}`} alt="" /></Link>
+
+
+                {
+                    user ? (<button onClick={logoutUser} className="btn bg-[#166534] text-white px-8 rounded-lg">Logout</button>) : (<Link to='/login' className="btn bg-[#166534] text-white px-8 rounded-lg">Login</Link>)
+                }
+
+
+
             </div>
         </div>
     );

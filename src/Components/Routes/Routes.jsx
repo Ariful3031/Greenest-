@@ -5,6 +5,7 @@ import PlantsDetailLayout from "../../Layout/PlantsDetailLayout";
 import Login from "../../Pages/Login";
 import SignupPage from "../../Pages/SignupPage";
 
+
 const router = createBrowserRouter([
 
     {
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
                 path: '/signup',
                 element: <SignupPage></SignupPage>
             },
+
         ]
     },
     {
