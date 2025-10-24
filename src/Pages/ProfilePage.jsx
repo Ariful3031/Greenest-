@@ -5,7 +5,7 @@ import defaultUserImg from '../assets/user.png'
 // import { useContext } from 'react';
 
 const ProfilePage = () => {
-    const { user, updateUser } = useContext(AuthContext)
+    const { user, setUser, updateUser } = useContext(AuthContext)
     // console.log(user)
 
     const handleUpdateUser = (event) => {
@@ -17,7 +17,9 @@ const ProfilePage = () => {
         updateUser({ displayName: name, photoURL: image })
             .then(() => {
                 // UpdateProfile
+                setUser({ ...user, displayName: name, photoURL: image });
                 toast.success('Profile Update success')
+                event.target.reset();
             })
             .catch(err => {
                 console.log(err.message)

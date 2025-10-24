@@ -7,9 +7,9 @@ import { Link, useNavigate } from 'react-router';
 
 const SignupPage = () => {
 
+    const { createUser, setUser, user, updateUser, googleSignin } = useContext(AuthContext);
     const [err, setErr] = useState("")
     const [showPassword, setShowPassword] = useState(false)
-    const { createUser, setUser, updateUser, googleSignin } = useContext(AuthContext);
     // console.log(createUser)
     // const location = useLocation();
     const navigate = useNavigate();
@@ -75,6 +75,7 @@ const SignupPage = () => {
                 updateUser({ displayName: name, photoURL: image })
                     .then(() => {
                         // UpdateProfile
+                        setUser({ ...user, displayName: name, photoURL: image });
                     })
                     .catch(err => {
                         console.log(err.message)
@@ -184,7 +185,7 @@ const SignupPage = () => {
                                 err && <p className='text-red-500 text-sm mt-2'>{err}</p>
                             }
                             {/* button  */}
-                            <button className="btn btn-neutral font-semibold border-none bg-[#02A53B] hover:bg-[#15803D] mt-4">Sign Up</button>
+                            <button className="btn btn-neutral font-semibold border-none bg-[#02A53B] hover:bg-[#15803D] mt-4"> Register</button>
                         </fieldset>
                     </form>
 
