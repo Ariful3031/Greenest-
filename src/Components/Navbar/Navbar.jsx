@@ -27,7 +27,7 @@ const Navbar = () => {
 
                     </ul>
                 </div>
-                <img className="w-[100px] h-10 btn-ghost text-xl" src="https://images.squarespace-cdn.com/content/v1/6594040f3b38c97cdafab8d3/969658bd-5410-4fae-a5dc-5076eca40fd0/GreeNest+Logo+%28h%29.png" alt="" />
+                <Link to='/'> <img className="w-[100px] h-10 btn-ghost text-xl" src="https://images.squarespace-cdn.com/content/v1/6594040f3b38c97cdafab8d3/969658bd-5410-4fae-a5dc-5076eca40fd0/GreeNest+Logo+%28h%29.png" alt="" /></Link>
 
             </div>
             <div className="navbar-center hidden lg:flex">

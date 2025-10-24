@@ -83,6 +83,7 @@ const Login = () => {
     const handleForgotPassword = () => {
 
         const email = emailRef.current.value
+
         sendPasswordResetEmail(auth, email)
             .then(() => {
                 toast.success('please check your email')

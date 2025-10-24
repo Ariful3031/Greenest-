@@ -22,6 +22,7 @@ const AuthProvider = ({ children }) => {
     }
 
     const updateUser = (updateData) => {
+
         return updateProfile(auth.currentUser, (updateData))
     }
     const loginUser = (email, password) => {
@@ -63,7 +64,7 @@ const AuthProvider = ({ children }) => {
         logoutUser,
         loading,
         setLoading,
-        googleSignin
+        googleSignin,
     }
 
 

@@ -11,3 +11,8 @@
 a.active {
   text-decoration: underline;
 }
+
+
+.marquee-div {
+  @apply flex flex-col h-[400px] p-3 bg-white my-3
+}
