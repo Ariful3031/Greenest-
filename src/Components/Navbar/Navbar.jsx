@@ -9,7 +9,16 @@ const Navbar = () => {
     const Links = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/plants'>Plants</NavLink></li>
-        <li><NavLink to='/profile'>My profile</NavLink></li>
+        {
+            user && <div className='flex gap-1'>
+                <li><NavLink to='/profile'>My profile</NavLink></li>
+                <li><NavLink to='/about-us'>About us</NavLink></li>
+                <li><NavLink to='/support'>Support</NavLink></li>
+                <li><NavLink to='/contact'>Contact</NavLink></li>
+            </div>
+        }
+        {/* Home, All Items, Login/Register, About us, Contact, Support etc. */}
+
 
     </>
 

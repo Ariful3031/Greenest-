@@ -17,7 +17,7 @@ const PlantsDetailsPage = () => {
         event.preventDefault();
         const userName = event.target.name.value
         const userEmail = event.target.email.value
-        console.log('click book now', userName, userEmail)
+        // console.log(userName, userEmail)
         toast.success('Success Booking')
         event.target.reset();
 
@@ -33,7 +33,7 @@ const PlantsDetailsPage = () => {
     return (
         <div className='w-11/12 mx-auto px-10 py-10 bg-[#F0FDF4]'>
             <div>
-                <img className='w-full h-[500px] rounded-lg object-cover' src={image} alt="" />
+                <img className='w-full h-[70vh] rounded-lg object-cover' src={image} alt="" />
                 <h2 className='text-2xl font-semibold mt-5 mb-2'>{plantName}</h2>
                 <div className='flex items-center gap-5 justify-between mt-5'>
                     <div className='flex items-center px-3 py-1 bg-amber-200 rounded-xl'>

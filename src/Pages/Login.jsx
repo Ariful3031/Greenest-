@@ -37,14 +37,14 @@ const Login = () => {
         // console.log('click login', email, password)
         loginUser(email, password)
             .then(result => {
-                console.log(result.user)
+                // console.log(result.user)
                 toast.success("login success")
                 event.target.reset();
                 navigate(`${location.state ? location.state : "/"}`)
 
             })
             .catch(error => {
-                console.log(error.message)
+                // console.log(error.message)
                 if (error.code === "auth/email-already-in-use") {
                     toast.error("This email is already registered.");
                 } else if (error.code === "auth/invalid-email") {
@@ -92,7 +92,7 @@ const Login = () => {
             .catch((error) => {
                 console.log(error)
             })
-        console.log(email)
+        // console.log(email)
     }
     return (
         <div className='bg-[#F0FDF4] w-full mx-auto h-screen my-auto flex justify-center items-center'>

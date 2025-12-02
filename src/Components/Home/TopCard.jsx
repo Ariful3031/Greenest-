@@ -5,9 +5,9 @@ import { MdOutlineStar } from 'react-icons/md';
 import { Link } from 'react-router';
 
 const TopCard = ({ singleData }) => {
-    console.log(singleData)
+    // console.log(singleData)
     const { image, plantName, price, rating, plantId } = singleData;
-    console.log(plantId)
+    // console.log(plantId)
 
     return (
         <div className='p-5 bg-[#F0FDF4] rounded-lg'>
