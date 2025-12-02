@@ -15,8 +15,8 @@ const PlantsDetailsPage = () => {
 
     const handleBook = (event) => {
         event.preventDefault();
-        const userName = event.target.name.value
-        const userEmail = event.target.email.value
+        // const userName = event.target.name.value
+        // const userEmail = event.target.email.value
         // console.log(userName, userEmail)
         toast.success('Success Booking')
         event.target.reset();
