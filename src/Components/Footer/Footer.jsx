@@ -5,6 +5,8 @@ import { Link } from 'react-router';
 
 
 const Footer = () => {
+
+
     return (
         <div>
             <footer className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-7 lg:grid-cols-6 gap-6 sm:gap-8 footer bg-[#FFF0E1] text-base-content rounded px-16 py-10 

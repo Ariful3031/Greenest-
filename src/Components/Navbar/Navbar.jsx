@@ -10,12 +10,12 @@ const Navbar = () => {
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/plants'>Plants</NavLink></li>
         {
-            user && <div className='flex gap-1'>
+            user && <>
                 <li><NavLink to='/profile'>My profile</NavLink></li>
                 <li><NavLink to='/about-us'>About us</NavLink></li>
                 <li><NavLink to='/support'>Support</NavLink></li>
                 <li><NavLink to='/contact'>Contact</NavLink></li>
-            </div>
+            </>
         }
         {/* Home, All Items, Login/Register, About us, Contact, Support etc. */}
 
@@ -23,7 +23,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="w-full px-14 mx-auto navbar bg-[#F0FDF4] shadow-sm">
+        <div className="w-full px-3 md:px-14 mx-auto sticky top-0 z-[1000] navbar bg-[#F0FDF4] shadow-sm">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -31,7 +31,7 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex="-1"
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 text-green-500 mt-3 w-52 p-2 shadow">
                         {Links}
 
                     </ul>

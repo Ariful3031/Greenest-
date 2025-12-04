@@ -22,7 +22,7 @@ const EcoDecorIdeas = () => {
                     Discover creative ways to style your home and workspace with plants —
                     make your surroundings fresh, vibrant, and eco-friendly.
                 </p>
-                <div className="grid px-5 gap-5 grid-cols-4">
+                <div className="grid px-5 gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
                     {
                         ecoDecor.map((idea) => <DecorIdeasCard key={idea.id} idea={idea}></DecorIdeasCard>)
                     }

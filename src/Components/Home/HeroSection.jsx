@@ -7,14 +7,14 @@ import "swiper/css/pagination";
 
 const HeroSection = () => {
     return (
-        <section className="relative w-full h-full overflow-hidden">
+        <section className="relative mt-3 w-full h-full overflow-hidden">
             <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 navigation
                 pagination={{ clickable: true }}
                 autoplay={{ delay: 3000, disableOnInteraction: false }}
                 loop={true}
-                className="w-full h-[75vh]"
+                className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[75vh]"
             >
                 <SwiperSlide>
                     <img

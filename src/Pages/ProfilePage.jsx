@@ -29,7 +29,7 @@ const ProfilePage = () => {
 
 
     if (!user) {
-        return <div className='w-full mx-auto h-screen flex items-center bg-[#CFF0DC]'>
+        return <div className='w-full mx-auto  h-screen flex items-center bg-[#CFF0DC]'>
             <div className='bg-[#CDADA8] w-[400px] p-5 flex flex-col justify-center items-center rounded-lg mx-auto'>
                 <img className=' w-[150px] h-[150px] rounded-full' src={defaultUserImg} alt="" />
                 <h2 className='text-xl font-semibold mt-2'>No have an account</h2>

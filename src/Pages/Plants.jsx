@@ -1,10 +1,10 @@
 import React from 'react';
-import TopRed from '../Components/Home/TopRed';
+import AllPlantsCard from '../Components/Home/AllPlantsCard';
 
 const Plants = () => {
     return (
         <div>
-            <TopRed></TopRed>
+            <AllPlantsCard></AllPlantsCard>
         </div>
     );
 };
